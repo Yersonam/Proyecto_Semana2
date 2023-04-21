@@ -1,0 +1,23 @@
+public class Persona {
+
+String nombre;
+int edad;
+char genero;
+
+public void saludar (){
+
+System.out.println("Hola, soy"+nombre);
+}
+
+}
+
+public class Main {
+
+public static void main (String [] args){
+
+Persona persona1 = new Persona();
+persona1.nombre = "Juan"
+persona1.saludar();
+}
+
+}

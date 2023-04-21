@@ -1,0 +1,127 @@
+public class Punto {
+    
+   
+    
+    private double x;
+    private double y;
+   
+    public Punto(){
+        
+    }
+    
+    public void setPunto(double x, double y){
+        
+        this.x=x;
+        this.y=y;
+    }
+    
+    public double getX (){
+        return x;
+    }
+    
+    public double getY(){
+        return y;
+    }
+
+    @Override
+    public String toString(){
+        
+        return "Punto("+x+","+y+")";
+        
+    }
+    
+}
+
+
+-----------------------------------------
+
+public class Circulo extends Punto{
+    
+    private double radio;
+    
+    public Circulo(){
+        radio=0.0;
+    }
+    
+    public void setRadio(double nuevoRadio){
+        radio=nuevoRadio;
+    }
+    
+    public double getRadio(){
+        
+        return radio;
+    }
+    
+    public double area(){
+        
+        return (Math.PI*radio*radio);
+        
+        
+    }
+    
+    @Override
+
+    public String toString(){
+        return "Circulo("+radio+")";
+    }
+}
+
+------------------------------------------------
+
+public class Cilindro extends Circulo{
+    
+    private double altura;
+    
+    public Cilindro(){
+        
+    }
+    
+    public double getAltura(){
+        return altura;
+    }
+    
+    @Override
+    public double area(){
+        
+        return(2*Math.PI*super.getRadio()*(super.getRadio()+altura));
+    }
+    
+    
+    
+}
+
+ ----------------------------------------
+public class Ejemplo3 {
+    
+    public static void main(String []args){
+        
+        int x,y;
+        double r;
+        
+        Punto punto = new Punto();
+        
+        x=20;
+        y=35;
+        
+        punto.setPunto(x, y);
+        System.out.pritln(punto.toString());
+        
+        Circulo c = new Circulo();
+        Cilindro d = new Cilindro();
+        r=8;
+        
+        c.setPunto(nuevaRadio: r);
+        d.setRadio(nuevaRadio: r);
+        
+         System.out.pritln(x: c);   
+         System.out.pritln(x:"Circulo ");  
+         System.out.pritln("Area : "+c.area());  
+         System.out.pritln("Perimetro:" +c.perimetro());  
+         
+         System.out.pritln(x: "Cilindro");  
+         System.out.pritln("AREA: "+d.area());  
+  
+        
+    }
+    
+}
