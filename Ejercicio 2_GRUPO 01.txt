@@ -1,22 +1,32 @@
-public class Persona {
-        // Atributos a la clase Persona
-    String nombre;
-    int edad;
-    char genero;
-    //Método de la clase Persona
-    public void saludar(){
-        System.out.println("Hola, soy"+ nombre);
-    }
-}
-    
-*************************************************************
-public class Main{
-    public static void main(String[] args) {
-        //Creación del objeto
-        Persona persona1=new Persona();
-        persona1.nombre="Juan";//Accedemos a los atributos
-        persona1.saludar();//imprime "Hola, soy Juan"
+public class Robot {
+    private String nombre;
+    private int x, y;
+     
+    public Robot ( String nombre, int x, int y){
+        this.nombre=nombre;
+        this.x=x;
+        this.y=y;
         
     }
+    public void moverAdelante(int distancia){
+        y+=distancia;
+        
+    }
+    public void moverAtras(int distancia){
+        y-= distancia;
+    }
     
-}
+    public void moverIzquierda (int distancia){
+        x-=distancia;
+    }
+    public void moverDerecha(int distancia){
+        x+= distancia;
+    }
+    public void mostrarUbicacion(){
+        System.out.println(nombre+" esta en la posición ("+x+" ," +y+")");
+    }
+//Método de retorno
+    public static String saludo (){
+        System.out.println("Hola, mi nombre es ");
+        return nombre;
+    }
